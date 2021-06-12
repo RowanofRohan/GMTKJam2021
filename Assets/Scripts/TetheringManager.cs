@@ -112,6 +112,8 @@ public class TetheringManager : MonoSingleton<TetheringManager>
     {
         isUpdatingLine = false;
         line.gameObject.SetActive(false);
+        tetheredObj = null;
+        currentObjPos = null;
     }
 
 
