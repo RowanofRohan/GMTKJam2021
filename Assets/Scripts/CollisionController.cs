@@ -6,6 +6,9 @@ public class CollisionController : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public delegate void CollisionAction();
+    public static event CollisionAction OnCollision;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -16,6 +19,7 @@ public class CollisionController : MonoBehaviour
         if (!CanBounce(collision.gameObject.tag))
         {
             rb.velocity = Vector2.zero;
+            OnCollision?.Invoke();
         }
     }
 

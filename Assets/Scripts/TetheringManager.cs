@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TetheringManager : MonoSingleton<TetheringManager>
@@ -19,11 +20,26 @@ public class TetheringManager : MonoSingleton<TetheringManager>
         cam = Camera.main;
     }
 
+    private void OnEnable()
+    {
+        CollisionController.OnCollision += ResetLine;
+    }
+
+    private void OnDisable()
+    {
+        CollisionController.OnCollision -= ResetLine;
+    }
+
+    //private void Start()
+    //{
+    //    line.positionCount = 2;
+    //}
+
     private void Update()
     {
         MouseInteraction();
 
-        //UpdateTetherLine();
+        UpdateTetherLine();
     }
 
     private void MouseInteraction()
@@ -85,11 +101,19 @@ public class TetheringManager : MonoSingleton<TetheringManager>
     private void PostLaunch()
     {
         isUpdatingLine = true;
+        line.gameObject.SetActive(true);
         UpdateTetherLine();
 
-        tetheredObj = null;
+        //tetheredObj = null;
         //currentObjPos = null;
     }
+
+    private void ResetLine()
+    {
+        isUpdatingLine = false;
+        line.gameObject.SetActive(false);
+    }
+
 
     private void UpdateTetherLine()
     {
