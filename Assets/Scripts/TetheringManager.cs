@@ -9,9 +9,10 @@ public class TetheringManager : MonoSingleton<TetheringManager>
     [SerializeField] private LayerMask layerMask;
 
     [SerializeField] private LineRenderer line;
+    [SerializeField] private ParticleSystem selectionFX;
 
     private Camera cam;
-    private Rigidbody2D tetheredObj;
+    [SerializeField] private Rigidbody2D tetheredObj;
     private Vector3? currentObjPos;
     private bool isUpdatingLine = false;
 
@@ -23,11 +24,15 @@ public class TetheringManager : MonoSingleton<TetheringManager>
     private void OnEnable()
     {
         CollisionController.OnCollision += ResetLine;
+        Bullet.OnHitObject += OnHitObject;
+        Bullet.OnHitWall += OnHitWall;
     }
 
     private void OnDisable()
     {
         CollisionController.OnCollision -= ResetLine;
+        Bullet.OnHitObject -= OnHitObject;
+        Bullet.OnHitWall -= OnHitWall;
     }
 
     //private void Start()
@@ -37,75 +42,7 @@ public class TetheringManager : MonoSingleton<TetheringManager>
 
     private void Update()
     {
-        MouseInteraction();
-
         UpdateTetherLine();
-    }
-
-    private void MouseInteraction()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray, 20, layerMask);
-            MouseClick(hit2D);
-        }
-    }
-
-    private void MouseClick(RaycastHit2D hit2D)
-    {
-        if (hit2D.collider != null)
-        {
-            Debug.Log(hit2D.collider.name);
-            ClickOnObjects(hit2D);
-        }
-        else if (tetheredObj)
-        {
-            ClickOnEmpty();
-        }
-    }
-
-    private void ClickOnObjects(RaycastHit2D hit2D)
-    {
-
-        // Register the first object
-        if (tetheredObj == null)
-        {
-            tetheredObj = hit2D.rigidbody;
-        }
-        // Tether first object to the second object
-        else
-        {
-            tetheredObj.velocity = Vector2.zero;
-            Vector2 dir = hit2D.rigidbody.transform.position - tetheredObj.transform.position;
-            tetheredObj.AddForce(dir * throwForce, ForceMode2D.Force);
-
-            currentObjPos = hit2D.rigidbody.transform.position;
-            PostLaunch();
-        }
-    }
-
-    private void ClickOnEmpty()
-    {
-        if (canTetherGround)
-        {
-            tetheredObj.velocity = Vector2.zero;
-            Vector2 dir = cam.ScreenToWorldPoint(Input.mousePosition) - tetheredObj.transform.position;
-            tetheredObj.AddForce(dir * throwForce, ForceMode2D.Force);
-        }
-
-        currentObjPos = cam.ScreenToWorldPoint(Input.mousePosition);
-        PostLaunch();
-    }
-
-    private void PostLaunch()
-    {
-        isUpdatingLine = true;
-        line.gameObject.SetActive(true);
-        UpdateTetherLine();
-
-        //tetheredObj = null;
-        //currentObjPos = null;
     }
 
     private void ResetLine()
@@ -116,6 +53,83 @@ public class TetheringManager : MonoSingleton<TetheringManager>
         currentObjPos = null;
     }
 
+    private void OnHitObject(Rigidbody2D rb)
+    {
+        if (layerMask == (layerMask | (1 << rb.gameObject.layer)))
+        {
+            SelectObjects(rb);
+        }
+        else
+        {
+            SelectEmpty();
+        }
+    }
+
+    private void OnHitWall(Vector3 pos)
+    {
+        // Already selected an object to tether
+        if (tetheredObj && !isUpdatingLine)
+        {
+            tetheredObj.velocity = Vector2.zero;
+            Vector2 dir = pos - tetheredObj.transform.position;
+            tetheredObj.AddForce(dir * throwForce, ForceMode2D.Force);
+
+            currentObjPos = pos;
+            PostLaunch();
+        }
+        else
+        {
+            SelectEmpty();
+        }
+    }
+
+    private void SelectObjects(Rigidbody2D hitRb)
+    {
+        // Register the first object
+        if (tetheredObj == null || (tetheredObj != null && isUpdatingLine))
+        {
+            ResetLine();
+            tetheredObj = hitRb;
+            selectionFX.transform.position = tetheredObj.position;
+            selectionFX.Play();
+        }
+        // Tether first object to the second object
+        else
+        {
+            tetheredObj.velocity = Vector2.zero;
+            Vector2 dir = hitRb.transform.position - tetheredObj.transform.position;
+            tetheredObj.AddForce(dir * throwForce, ForceMode2D.Force);
+            hitRb.AddForce(-dir * throwForce, ForceMode2D.Force);
+
+            currentObjPos = hitRb.transform.position;
+            PostLaunch();
+        }
+    }
+
+    private void SelectEmpty()
+    {
+        if (canTetherGround)
+        {
+            //tetheredObj.velocity = Vector2.zero;
+            Vector2 dir = cam.ScreenToWorldPoint(Input.mousePosition) - tetheredObj.transform.position;
+            tetheredObj.AddForce(dir * throwForce, ForceMode2D.Force);
+
+            currentObjPos = cam.ScreenToWorldPoint(Input.mousePosition);
+        }
+
+        PostLaunch();
+    }
+
+    private void PostLaunch()
+    {
+        isUpdatingLine = true;
+        selectionFX.Stop();
+        line.gameObject.SetActive(true);
+        UpdateTetherLine();
+
+        //tetheredObj = null;
+        //currentObjPos = null;
+    }
 
     private void UpdateTetherLine()
     {
