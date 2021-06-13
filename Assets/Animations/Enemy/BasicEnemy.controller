@@ -370,8 +370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96e9b88801fac64b94ef725bf98d319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  interactionRange: 8
+  speed: 1
+  interactionRange: 4
 --- !u!114 &6355689670884149148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -384,4 +384,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d10b285eadf404499cdf9bf063c3def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
