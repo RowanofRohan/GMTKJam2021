@@ -10,6 +10,7 @@ TagManager:
   - FloorTile
   - Key
   - Door
+  - Enemy
   layers:
   - Default
   - TransparentFX

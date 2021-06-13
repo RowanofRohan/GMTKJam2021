@@ -32,4 +32,10 @@ public class EnemyController : MonoBehaviour
             animator.SetBool("isFollowing", true);
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(transform.position, stoppingDistance);
+    }
 }

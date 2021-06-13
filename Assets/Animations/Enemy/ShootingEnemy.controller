@@ -18,7 +18,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyAC
+  m_Name: ShootingEnemy
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isFollowing
@@ -268,7 +268,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fe82f8084a7ff9b49821ada901e3f260, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2ed48d486e7719c439e5952a896fcadc, type: 2}
   m_Tag: Monster
   m_SpeedParameter: 
   m_MirrorParameter: isFollowing
@@ -296,7 +296,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: dd454e8ec2d34384fa3d839affc0cdd9, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2ed48d486e7719c439e5952a896fcadc, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -324,7 +324,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 95640876875a7e942b6a4ef3c5d2e210, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2ed48d486e7719c439e5952a896fcadc, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -371,6 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  interactionRange: 8
 --- !u!114 &6355689670884149148
 MonoBehaviour:
   m_ObjectHideFlags: 1

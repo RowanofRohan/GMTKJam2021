@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PatrolBehavior : StateMachineBehaviour
 {
-
-    private PatrolSpots patrol;
     public float speed;
+    public float interactionRange;
     private Vector2 randomSpot;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        patrol = GameObject.FindGameObjectWithTag("PatrolSpots").GetComponent<PatrolSpots>();
+    {   
         randomSpot = Random.insideUnitCircle * 5;
     }
 
@@ -25,13 +23,8 @@ public class PatrolBehavior : StateMachineBehaviour
         }
         else
         {
-            randomSpot = Random.insideUnitCircle * 5;
+            randomSpot = Random.insideUnitCircle * interactionRange;
         }
-
-        //if (Input.GetKeyDown(KeyCode.Space)) {
-        //    animator.SetBool("isPatrolling", false);
-        //}
-
     }
 
 
