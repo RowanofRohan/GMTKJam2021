@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasTrigger: 1
+  isPermaTrigger: 1
   snappableTags:
   - Key
   boxCollider: {fileID: 7667272147714475045}

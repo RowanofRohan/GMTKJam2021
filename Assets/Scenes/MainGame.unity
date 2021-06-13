@@ -428,14 +428,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -4375785441301237042, guid: 888077a1bd1261b4d89408798b574810, type: 3}
-      propertyPath: snappableTags.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -4375785441301237042, guid: 888077a1bd1261b4d89408798b574810, type: 3}
-      propertyPath: snappableTags.Array.data[1]
-      value: Key
-      objectReference: {fileID: 0}
     - target: {fileID: 5135154669789798264, guid: 888077a1bd1261b4d89408798b574810, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -857,6 +849,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1211233daf9f84b4a9987c9efb8f2d8f, type: 3}
+--- !u!1 &789261953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 789261955}
+  - component: {fileID: 789261954}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &789261954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789261953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff2ac50882080149958b686b0b79e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioFiles:
+  - audioName: BGM
+    audioClip: {fileID: 8300000, guid: 8459454e30fc59048abe6f3504f9de45, type: 3}
+    volume: 0.5
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 1
+    playOnAwake: 1
+--- !u!4 &789261955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789261953}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &813040501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6529,10 +6572,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel
       objectReference: {fileID: 0}
-    - target: {fileID: 8794249277301581539, guid: 3e329f576f5dda64aa3baa3519635910, type: 3}
-      propertyPath: layerMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e329f576f5dda64aa3baa3519635910, type: 3}
 --- !u!4 &1992351512 stripped
@@ -6761,10 +6800,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1570177410973351085, guid: ed45139085f04c048be61b9fcfd04d4a, type: 3}
-      propertyPath: isPermaTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8297625340626502723, guid: ed45139085f04c048be61b9fcfd04d4a, type: 3}
       propertyPath: m_Name
       value: Door

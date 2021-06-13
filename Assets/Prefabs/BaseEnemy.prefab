@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4423142289559671389}
   - component: {fileID: 4423142289559671388}
   - component: {fileID: 4423142289559671391}
+  - component: {fileID: 2269566583626489589}
   m_Layer: 7
   m_Name: BaseEnemy
   m_TagString: Enemy
@@ -159,8 +160,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008778632, y: 0.053126216}
-  m_Size: {x: 1.2912499, y: 1.6003478}
+  m_Offset: {x: -0.03, y: -0.2}
+  m_Size: {x: 0.9, y: 1}
   m_Direction: 0
 --- !u!114 &4423142289559671389
 MonoBehaviour:
@@ -203,3 +204,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inflictedDamage: 5
+--- !u!114 &2269566583626489589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423142289559671364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a338b067623324bad75c4332797ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionDampening: 0.1
+  motionThreshold: {x: 0.5, y: 0.5}
+  bounceableTags:
+  - Wall

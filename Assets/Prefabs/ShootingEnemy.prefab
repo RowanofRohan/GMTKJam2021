@@ -31,6 +31,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4423142289559671365, guid: 1211233daf9f84b4a9987c9efb8f2d8f, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423142289559671365, guid: 1211233daf9f84b4a9987c9efb8f2d8f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 4423142289559671390, guid: 1211233daf9f84b4a9987c9efb8f2d8f, type: 3}
       propertyPath: m_RootOrder
       value: 0
