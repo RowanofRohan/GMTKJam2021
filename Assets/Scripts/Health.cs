@@ -8,11 +8,15 @@ public class Health : MonoBehaviour
     public int currentHealth;
 
     public HealthBar healthBar;
+    public GameObject deathEffect;
 
     void Start()
     {
         currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
+        if (transform.CompareTag("Player"))
+        {
+            healthBar.SetMaxHealth(maxHealth);
+        }
     }
 
     public void TakeDamage(int damage)
@@ -20,10 +24,14 @@ public class Health : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
-            //Destroy(gameObject);
             gameObject.SetActive(false);
+            Destroy(Instantiate(deathEffect.gameObject, transform.position, Quaternion.identity), 5f);
+            
         }
 
-        //healthBar.SetHealth(currentHealth);
+        if (transform.CompareTag("Player"))
+        {
+            healthBar.SetHealth(currentHealth);
+        }
     }
 }

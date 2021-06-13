@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireParticleGO: {fileID: 6938490151153463342, guid: a0f9011490a9e9543bfbfafbb63b04e9, type: 3}
-  radius: 3
+  bigExplosionParticle: {fileID: 873982236905072410, guid: 36dc10b382d4cb54a9b337e6689efc49, type: 3}
+  radius: 4
 --- !u!58 &322659770408577146
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -63,7 +64,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 4
 --- !u!50 &3989422607518758657
 Rigidbody2D:
   serializedVersion: 4
@@ -139,6 +140,10 @@ PrefabInstance:
     - target: {fileID: 6938490151153463342, guid: a0f9011490a9e9543bfbfafbb63b04e9, type: 3}
       propertyPath: m_Name
       value: FireEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938490151153463342, guid: a0f9011490a9e9543bfbfafbb63b04e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f9011490a9e9543bfbfafbb63b04e9, type: 3}
