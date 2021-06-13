@@ -494,6 +494,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1448582507}
+    - target: {fileID: 619911473744780867, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1032969307460132792, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6142,7 +6146,7 @@ MonoBehaviour:
     m_Bits: 192
   slowMoDuration: 0.2
   slowMoDelay: 0.5
-  slowMoRate: 0.4
+  slowMoRate: 1
   line: {fileID: 414748166}
   selectionFX: {fileID: 907730636}
   tetheredObj: {fileID: 0}
