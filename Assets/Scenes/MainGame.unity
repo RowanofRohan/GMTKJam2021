@@ -189,6 +189,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &359664494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8109214572044374449, guid: 0458b51fbb1978747b81e31e139e7d7f, type: 3}
+  m_PrefabInstance: {fileID: 4471042582707955230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &359664498
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359664494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &374035666
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +463,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1897044319
       objectReference: {fileID: 0}
+    - target: {fileID: 619911472686521703, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 619911473744780865, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -456,6 +482,34 @@ PrefabInstance:
     - target: {fileID: 1032969307460132792, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556744724321941279, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556744724321941279, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556744724321941279, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1323849168}
+    - target: {fileID: 7556744724321941279, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556744724321941279, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556744724321941279, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RestartGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556744724321941279, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
@@ -5928,6 +5982,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1323849167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 619911472686521698, guid: b84655d83d174c2459b4a39c290dcd55, type: 3}
+  m_PrefabInstance: {fileID: 565286575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1323849168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323849167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f495cd55254ee64d80914ff31ab3bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1413965918
 GameObject:
   m_ObjectHideFlags: 0
@@ -5969,6 +6040,7 @@ MonoBehaviour:
   selectionFX: {fileID: 907730636}
   tetheredObj: {fileID: 0}
   focusPanel: {fileID: 565286576}
+  CMshake: {fileID: 2015562957}
 --- !u!4 &1413965920
 Transform:
   m_ObjectHideFlags: 0
@@ -6311,6 +6383,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e329f576f5dda64aa3baa3519635910, type: 3}
+--- !u!114 &2015562957 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1594088276270558311, guid: 0458b51fbb1978747b81e31e139e7d7f, type: 3}
+  m_PrefabInstance: {fileID: 4471042582707955230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adce75ac332e4c4e9e7ac1b7b8ff9ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2063019073
 GameObject:
   m_ObjectHideFlags: 0

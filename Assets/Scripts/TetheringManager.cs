@@ -19,6 +19,7 @@ public class TetheringManager : MonoSingleton<TetheringManager>
     [SerializeField] private ParticleSystem selectionFX;
     [SerializeField] private Rigidbody2D tetheredObj;
     [SerializeField] private GameObject focusPanel;
+    [SerializeField] private CinemachineShake CMshake;
 
     private Camera cam;
     private Vector3? currentObjPos;
@@ -106,6 +107,7 @@ public class TetheringManager : MonoSingleton<TetheringManager>
         {
             Vector2 dir = pos - tetheredObj.transform.position;
             tetheredObj.AddForce(dir * throwForce, ForceMode2D.Force);
+
         }
         else
         {
@@ -154,6 +156,7 @@ public class TetheringManager : MonoSingleton<TetheringManager>
 
         Vector2 dir = hitRb.transform.position - tetheredObj.transform.position;
         tetheredObj.AddForce(dir * throwForce, ForceMode2D.Force);
+        CMshake.ShakeCamera(3, 0.3f);
         hitRb.AddForce(-dir * throwForce, ForceMode2D.Force);
     }
 
