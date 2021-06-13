@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Object
+  - Bullet
+  - DamagingBullet
+  - PatrolSpots
   layers:
   - Default
   - TransparentFX
