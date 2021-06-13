@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionDampening: 0.1
+  motionThreshold: {x: 0.2, y: 0.2}
   bounceableTags:
   - Wall
 --- !u!114 &8794249277301581539
@@ -154,6 +155,9 @@ MonoBehaviour:
   fireAreaGO: {fileID: 4598060134330769643, guid: c792a1d0c052b9547956dd87e280c65a, type: 3}
   radius: 3
   inflictedDamage: 100
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8068923576244133797
 GameObject:
   m_ObjectHideFlags: 0

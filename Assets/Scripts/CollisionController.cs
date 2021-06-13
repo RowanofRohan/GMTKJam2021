@@ -3,6 +3,7 @@ using UnityEngine;
 public class CollisionController : MonoBehaviour
 {
     [SerializeField] private float collisionDampening;
+    [SerializeField] private Vector2 motionThreshold;
     [SerializeField] private string[] bounceableTags;
 
     private Rigidbody2D rb;
@@ -21,7 +22,11 @@ public class CollisionController : MonoBehaviour
         {
             rb.velocity *= collisionDampening;
         }
-        OnCollision?.Invoke();
+
+        if (rb.velocity.magnitude > motionThreshold.magnitude)
+        {
+            OnCollision?.Invoke();
+        }
     }
 
     private bool CanBounce(string tag)

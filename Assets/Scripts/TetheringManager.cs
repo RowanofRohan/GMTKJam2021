@@ -49,7 +49,17 @@ public class TetheringManager : MonoSingleton<TetheringManager>
 
     private void Update()
     {
+        MouseInteraction();
+
         UpdateTetherLine();
+    }
+
+    private void MouseInteraction()
+    {
+        if (Input.GetMouseButtonUp(1))
+        {
+            ResetLine();
+        }
     }
 
     private void OnHitObject(Rigidbody2D rb)
@@ -92,8 +102,15 @@ public class TetheringManager : MonoSingleton<TetheringManager>
 
         yield return new WaitForSeconds(slowMoDelay);
 
-        Vector2 dir = pos - tetheredObj.transform.position;
-        tetheredObj.AddForce(dir * throwForce, ForceMode2D.Force);
+        if (tetheredObj != null)
+        {
+            Vector2 dir = pos - tetheredObj.transform.position;
+            tetheredObj.AddForce(dir * throwForce, ForceMode2D.Force);
+        }
+        else
+        {
+            ResetLine();
+        }
     }
 
     private void SelectObjects(Rigidbody2D hitRb)

@@ -35,7 +35,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
+        Gizmos.color = new Color(0, 1, 1, 0.4f);
         Gizmos.DrawSphere(transform.position, stoppingDistance);
     }
 }

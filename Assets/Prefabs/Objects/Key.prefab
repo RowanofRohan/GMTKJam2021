@@ -258,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionDampening: 0.1
+  motionThreshold: {x: 0.2, y: 0.2}
   bounceableTags:
   - Wall
 --- !u!60 &444497559954798813
