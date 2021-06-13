@@ -145,8 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f202606fdac7df24f9b8a1983e159926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasTrigger: 0
   snappableTags:
   - Object
+  boxCollider: {fileID: 0}
+  animator: {fileID: 7938912374120951934}
 --- !u!95 &7938912374120951934
 Animator:
   serializedVersion: 3

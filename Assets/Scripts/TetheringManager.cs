@@ -34,6 +34,7 @@ public class TetheringManager : MonoSingleton<TetheringManager>
     private void OnEnable()
     {
         CollisionController.OnCollision += ResetLine;
+        CollisionSnapper.OnCollision += ResetLine;
         Bullet.OnHitObject += OnHitObject;
         Bullet.OnHitWall += OnHitWall;
     }
@@ -41,6 +42,7 @@ public class TetheringManager : MonoSingleton<TetheringManager>
     private void OnDisable()
     {
         CollisionController.OnCollision -= ResetLine;
+        CollisionSnapper.OnCollision -= ResetLine;
         Bullet.OnHitObject -= OnHitObject;
         Bullet.OnHitWall -= OnHitWall;
     }

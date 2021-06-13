@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class CollisionSnapper : MonoBehaviour
 {
+    [SerializeField] private bool hasTrigger;
+    [SerializeField] private bool isPermaTrigger;
     [SerializeField] private string[] snappableTags;
 
-    private BoxCollider2D boxCollider;
+    [SerializeField] private BoxCollider2D boxCollider;
+    [SerializeField] private Animator animator;
+
     private Rigidbody2D attachedRb = null;
 
-    private void Awake()
-    {
-        boxCollider = GetComponent<BoxCollider2D>();
-    }
+    private readonly int hashTriggeredPara = Animator.StringToHash("Triggered");
+
+    public delegate void CollisionAction();
+    public static event CollisionAction OnCollision;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,17 +24,47 @@ public class CollisionSnapper : MonoBehaviour
             attachedRb.velocity = Vector2.zero;
             attachedRb.angularVelocity = 0;
             attachedRb.transform.position = transform.position;
-            //boxCollider.enabled = false;
+
+            OnCollision?.Invoke();
+
+            if (hasTrigger)
+            {
+                animator.SetBool(hashTriggeredPara, true);
+                boxCollider.enabled = false;
+
+                // If one time triggers
+                if (isPermaTrigger)
+                {
+                    // Get All attached colliders
+                    Collider2D[] colliders = new Collider2D[8];
+                    other.attachedRigidbody.GetAttachedColliders(colliders);
+
+                    // Disable attached colliders
+                    for (int i = 0; i < colliders.Length; i++)
+                    {
+                        if (colliders[i] != null)
+                        {
+                            colliders[i].enabled = false;
+                        }
+                    }
+                }
+            }
 
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.attachedRigidbody == attachedRb)
+        if (other.attachedRigidbody == attachedRb && !isPermaTrigger)
         {
             attachedRb = null;
-            //boxCollider.enabled = true;
+
+            if (hasTrigger)
+            {
+                animator.SetBool(hashTriggeredPara, false);
+                boxCollider.enabled = true;
+            }
+
         }
     }
 

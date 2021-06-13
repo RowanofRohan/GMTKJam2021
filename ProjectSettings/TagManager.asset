@@ -7,6 +7,9 @@ TagManager:
   - Bullet
   - Wall
   - Object
+  - FloorTile
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX

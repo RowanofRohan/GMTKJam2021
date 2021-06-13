@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collidableTags:
   - Object
+  - Key
   staticTags:
   - Wall
   - FloorTile
