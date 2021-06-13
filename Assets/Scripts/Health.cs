@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
         }
         else
         {
-            AudioManager.PlayMusic("EnemyDamage");
+            AudioManager.PlayMusic("EnemyDamage1");
         }
     }
 }
