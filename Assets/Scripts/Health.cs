@@ -32,6 +32,11 @@ public class Health : MonoBehaviour
         if (transform.CompareTag("Player"))
         {
             healthBar.SetHealth(currentHealth);
+            AudioManager.PlayMusic("PlayerDamage");
+        }
+        else
+        {
+            AudioManager.PlayMusic("EnemyDamage");
         }
     }
 }

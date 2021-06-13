@@ -106,6 +106,7 @@ public class TetheringManager : MonoSingleton<TetheringManager>
         {
             Vector2 dir = pos - tetheredObj.transform.position;
             tetheredObj.AddForce(dir * throwForce, ForceMode2D.Force);
+            AudioManager.PlayMusic("TetherPull");
         }
         else
         {
@@ -155,6 +156,7 @@ public class TetheringManager : MonoSingleton<TetheringManager>
         Vector2 dir = hitRb.transform.position - tetheredObj.transform.position;
         tetheredObj.AddForce(dir * throwForce, ForceMode2D.Force);
         hitRb.AddForce(-dir * throwForce, ForceMode2D.Force);
+        AudioManager.PlayMusic("TetherPull");
     }
 
     private void SelectEmpty()
@@ -164,6 +166,7 @@ public class TetheringManager : MonoSingleton<TetheringManager>
             //tetheredObj.velocity = Vector2.zero;
             Vector2 dir = cam.ScreenToWorldPoint(Input.mousePosition) - tetheredObj.transform.position;
             tetheredObj.AddForce(dir * throwForce, ForceMode2D.Force);
+            AudioManager.PlayMusic("TetherPull");
 
             currentObjPos = cam.ScreenToWorldPoint(Input.mousePosition);
         }

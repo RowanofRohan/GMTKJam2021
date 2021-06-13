@@ -885,7 +885,105 @@ MonoBehaviour:
     isMute: 0
     source: {fileID: 0}
     isLooping: 1
+    playOnAwake: 0
+  - audioName: Combat
+    audioClip: {fileID: 8300000, guid: 3e4ec3bdc427978489150ee7f47dd803, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 1
+    playOnAwake: 0
+  - audioName: Puzzle
+    audioClip: {fileID: 8300000, guid: 63d436bbfe219db4587df808a21458d0, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 1
     playOnAwake: 1
+  - audioName: Collision
+    audioClip: {fileID: 8300000, guid: 81a087cf83e283c42a18f1e3c93fe25c, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: Explosion
+    audioClip: {fileID: 8300000, guid: 5aa4baadbe348804296bc280a6e99cba, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: TetherPull
+    audioClip: {fileID: 8300000, guid: cfac96caf4fa1f0458a8c2f39e3fe76f, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: Shoot
+    audioClip: {fileID: 8300000, guid: 8c4de1ebb0b987a47905dee3ed0296da, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: PlayerDamage
+    audioClip: {fileID: 8300000, guid: 6a16de98b3e39464981bf13a45b74c78, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: EnemyDamage1
+    audioClip: {fileID: 8300000, guid: 7baa2227d9f00c84f961f09f2ff67086, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: EnemyDamage2
+    audioClip: {fileID: 8300000, guid: b1c5d4d8541da4f4eb51fdccad37e809, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: OtherDamage
+    audioClip: {fileID: 8300000, guid: 2bda59b271b70f643927565ed4c2ca9f, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: PressurePlate
+    audioClip: {fileID: 8300000, guid: 0d13657fb8ea0e24e935bfa4e6580f33, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: Unlock
+    audioClip: {fileID: 8300000, guid: d121c97e881bf104189397077c8b9e48, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: DoorOpen
+    audioClip: {fileID: 8300000, guid: b1127a8f7d84af74da3ba577faf9e61e, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
+  - audioName: HealthPickUp
+    audioClip: {fileID: 8300000, guid: c11a8a49d0721b24b97f0a730cfc3b76, type: 3}
+    volume: 1
+    isMute: 0
+    source: {fileID: 0}
+    isLooping: 0
+    playOnAwake: 0
 --- !u!4 &789261955
 Transform:
   m_ObjectHideFlags: 0
@@ -1162,6 +1260,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 889738373}
+  deathEffect: {fileID: 0}
 --- !u!114 &820686660
 MonoBehaviour:
   m_ObjectHideFlags: 0

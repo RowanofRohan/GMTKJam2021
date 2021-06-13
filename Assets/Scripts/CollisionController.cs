@@ -25,6 +25,7 @@ public class CollisionController : MonoBehaviour
 
         if (rb.velocity.magnitude > motionThreshold.magnitude)
         {
+            AudioManager.PlayMusic("Collision");
             OnCollision?.Invoke();
         }
     }

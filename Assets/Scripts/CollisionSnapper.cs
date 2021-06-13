@@ -31,6 +31,7 @@ public class CollisionSnapper : MonoBehaviour
             {
                 animator.SetBool(hashTriggeredPara, true);
                 boxCollider.enabled = false;
+                AudioManager.PlayMusic("DoorOpen");
 
                 // If one time triggers
                 if (isPermaTrigger)

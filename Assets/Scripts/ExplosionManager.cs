@@ -24,6 +24,7 @@ public class ExplosionManager : MonoBehaviour
         {
             //Tetherable
             Explode(transform.position);
+            AudioManager.PlayMusic("Explosion");
             gameObject.SetActive(false);
         }
     }
