@@ -164,12 +164,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireAreaGO: {fileID: 4598060134330769643, guid: c792a1d0c052b9547956dd87e280c65a, type: 3}
-  radius: 3
+  radius: 6
   inflictedDamage: 100
   layerMask:
     serializedVersion: 2
     m_Bits: 192
-  motionThreshold: {x: 5, y: 5}
+  motionThreshold: {x: 2, y: 2}
 --- !u!95 &7234012970865545382
 Animator:
   serializedVersion: 3
