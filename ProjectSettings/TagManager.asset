@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Bullet
   - Wall
+  - Object
   layers:
   - Default
   - TransparentFX
@@ -40,14 +42,14 @@ TagManager:
   - 
   m_SortingLayers:
   - name: Background
-    uniqueID: 2255149265
+    uniqueID: 2180455655
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Foreground
-    uniqueID: 4288676009
+    uniqueID: 554567919
     locked: 0
   - name: UI
-    uniqueID: 1333216169
+    uniqueID: 1897044319
     locked: 0

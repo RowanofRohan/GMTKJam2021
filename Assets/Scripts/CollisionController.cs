@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CollisionController : MonoBehaviour
 {
+    [SerializeField] private float collisionDampening;
     [SerializeField] private string[] bounceableTags;
 
     private Rigidbody2D rb;
@@ -18,9 +19,9 @@ public class CollisionController : MonoBehaviour
     {
         if (!CanBounce(collision.gameObject.tag))
         {
-            rb.velocity = Vector2.zero;
-            OnCollision?.Invoke();
+            rb.velocity *= collisionDampening;
         }
+        OnCollision?.Invoke();
     }
 
     private bool CanBounce(string tag)
