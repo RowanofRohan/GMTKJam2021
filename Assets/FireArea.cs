@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class FireArea : MonoBehaviour
 {
-    public GameObject fireAreaGO;
+    public GameObject fireParticleGO;
+    public int radius;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         for (int i = 0; i < 10; i++)
         {
-            var pos = Random.insideUnitCircle * 3;
-            GameObject fire = Instantiate(fireAreaGO, transform, false);
+            var pos = Random.insideUnitCircle * radius;
+            GameObject fire = Instantiate(fireParticleGO, transform, false);
             fire.transform.localPosition = new Vector2(pos.x, pos.y);
         }
     }

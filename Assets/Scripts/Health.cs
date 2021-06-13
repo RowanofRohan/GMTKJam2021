@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-	public int maxHealth = 100;
-	public int currentHealth;
+    public int maxHealth = 100;
+    public int currentHealth;
 
-	public HealthBar healthBar;
+    public HealthBar healthBar;
 
-	void Start()
-	{
-		currentHealth = maxHealth;
-		healthBar.SetMaxHealth(maxHealth);
-	}
+    void Start()
+    {
+        currentHealth = maxHealth;
+        //healthBar.SetMaxHealth(maxHealth);
+    }
 
-	public void TakeDamage(int damage)
-	{
-		currentHealth -= damage;
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
 
-		healthBar.SetHealth(currentHealth);
-	}
+        //healthBar.SetHealth(currentHealth);
+    }
 }

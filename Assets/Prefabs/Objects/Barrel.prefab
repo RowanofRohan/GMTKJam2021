@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8068923575637527844}
   - component: {fileID: 8068923575637527845}
   - component: {fileID: 8068923575637527841}
+  - component: {fileID: 8794249277301581539}
   m_Layer: 6
   m_Name: Barrel
   m_TagString: Object
@@ -138,6 +139,21 @@ MonoBehaviour:
   collisionDampening: 0.1
   bounceableTags:
   - Wall
+--- !u!114 &8794249277301581539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8068923575637527846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb10b15643294b3469d8ea91e4c223c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireAreaGO: {fileID: 4598060134330769643, guid: c792a1d0c052b9547956dd87e280c65a, type: 3}
+  radius: 3
+  inflictedDamage: 100
 --- !u!1 &8068923576244133797
 GameObject:
   m_ObjectHideFlags: 0
