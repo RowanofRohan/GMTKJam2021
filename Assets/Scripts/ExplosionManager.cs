@@ -9,12 +9,23 @@ public class ExplosionManager : MonoBehaviour
     public int radius;
     public int inflictedDamage;
     public LayerMask layerMask;
+    public Vector2 motionThreshold;
+
+    private Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Tetherable
-        if (layerMask == (layerMask | (1 << collision.gameObject.layer)))
+        if (rb.velocity.magnitude > motionThreshold.magnitude)
+        {
+            //Tetherable
             Explode(transform.position);
+            gameObject.SetActive(false);
+        }
     }
 
     public void Explode(Vector2 position)
