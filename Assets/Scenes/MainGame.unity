@@ -6051,7 +6051,6 @@ MonoBehaviour:
   selectionFX: {fileID: 907730636}
   tetheredObj: {fileID: 0}
   focusPanel: {fileID: 565286576}
-  explosionManager: {fileID: 0}
 --- !u!4 &1413965920
 Transform:
   m_ObjectHideFlags: 0
@@ -6456,6 +6455,10 @@ PrefabInstance:
     - target: {fileID: 8068923575637527846, guid: 3e329f576f5dda64aa3baa3519635910, type: 3}
       propertyPath: m_Name
       value: Barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794249277301581539, guid: 3e329f576f5dda64aa3baa3519635910, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e329f576f5dda64aa3baa3519635910, type: 3}
