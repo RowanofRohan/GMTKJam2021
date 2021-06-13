@@ -17,9 +17,12 @@ public class FireArea : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        
+        IBurnable hit = (IBurnable)collider.gameObject.GetComponent(typeof(IBurnable));
+        if (hit != null)
+        {
+            hit.Burn(1000);
+        }
     }
 }

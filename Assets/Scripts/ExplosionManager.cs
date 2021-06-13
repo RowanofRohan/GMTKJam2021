@@ -20,19 +20,5 @@ public class ExplosionManager : MonoBehaviour
     public void Explode(Vector2 position)
     {
         GameObject fire = Instantiate(fireAreaGO, position, Quaternion.identity);
-        
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(fire.transform.position, radius);
-
-        if (colliders.Length > 0)
-        {
-            for (int i = 0; i < colliders.Length; i++)
-            {
-                IBurnable hit = (IBurnable)colliders[i].gameObject.GetComponent(typeof(IBurnable));
-                if (hit != null)
-                {
-                    hit.Burn(inflictedDamage);
-                }
-            }
-        }
     }
 }

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3230077167643219311}
   - component: {fileID: 4830583452727891022}
+  - component: {fileID: 322659770408577146}
+  - component: {fileID: 3989422607518758657}
   m_Layer: 0
   m_Name: FireDamagePoint
   m_TagString: Untagged
@@ -46,6 +48,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireParticleGO: {fileID: 6938490151153463342, guid: a0f9011490a9e9543bfbfafbb63b04e9, type: 3}
   radius: 3
+--- !u!58 &322659770408577146
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4598060134330769643}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3
+--- !u!50 &3989422607518758657
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4598060134330769643}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &7609406434724845026
 PrefabInstance:
   m_ObjectHideFlags: 0
